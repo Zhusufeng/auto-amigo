@@ -1,0 +1,19 @@
+{
+  "name": "auto-amigo",
+  "version": "1.0.0",
+  "description": "Auto Amigo is your car friend",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Zhusufeng/auto-amigo.git"
+  },
+  "author": "Lisa Gee",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Zhusufeng/auto-amigo/issues"
+  },
+  "homepage": "https://github.com/Zhusufeng/auto-amigo#readme"
+}
