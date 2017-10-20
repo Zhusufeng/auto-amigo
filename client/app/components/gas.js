@@ -1,5 +1,5 @@
 angular.module('index')
   .component('gas', {
     controller: 'mainCtrl',
-    templateUrl: 'views/gas.html'
+    templateUrl: 'client/views/gas.html'
   });
