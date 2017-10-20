@@ -3,9 +3,12 @@
   <p>
     Keep track of your gas history here!
   </p>
-  Current Mileage: <input type="text">
-  Gallons: <input type="text">
-  Price per Gallon: <input type="text">
+  <form id="gasForm">
+    Current Mileage: <input id="currentMileage" type="text"></input>
+    Gallons: <input id="gallons" type="text"></input>
+    Price per Gallon: <input id="pricePerGallon" type="text"></input>
+    <input id="submit" type="submit" value="Submit" ng-click="$ctrl.submit()"></input>
+  </form>
   
   <table>
     <thead>
