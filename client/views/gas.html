@@ -22,16 +22,16 @@
       <th>Price per Gallon</th>
       <th>Total Spent</th>
     </thead>
-    <tbody>
-      <tr>
-        <td>10/19/17</td>
-        <td>99500</td>
-        <td>100000</td>
-        <td>500</td>
-        <td>15</td>
-        <td>33.33</td>
-        <td>3.25</td>
-        <td>48.75</td>
+    <tbody id="gas">
+      <tr ng-repeat="entry in $ctrl.gaslog">
+        <td>{{entry.date}}</td>
+        <td>{{entry.previousMileage}}</td>
+        <td>{{entry.currentMileage}}</td>
+        <td>{{entry.milesDriven}}</td>
+        <td>{{entry.gallons}}</td>
+        <td>{{entry.MPG}}</td>
+        <td>{{entry.pricePerGallon}}</td>
+        <td>{{entry.totalSpent}}</td>
       </tr>
     </tbody>
   </table>
