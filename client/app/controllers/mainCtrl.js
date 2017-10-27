@@ -19,27 +19,24 @@ angular.module('index')
     let currentMileage = document.getElementById('currentMileage').value;
     let gallons = document.getElementById('gallons').value;
     let pricePerGallon = document.getElementById('pricePerGallon').value;
-    console.log('You submitted previousMileage: ' + previousMileage + ', currentMileage: ' + currentMileage + ', gallons: ' + gallons + ', price per gallon: ' + pricePerGallon);
 
     // Calculate 
     let milesDriven = (currentMileage - previousMileage).toFixed(0);
     let MPG = (milesDriven/gallons).toFixed(2); 
     let totalSpent = (gallons * pricePerGallon).toFixed(2); 
 
-    console.log(milesDriven, MPG, totalSpent);
-    
-    // Append a row to table
+    console.log('You submitted previousMileage: ' + previousMileage + ', currentMileage: ' + currentMileage + ', gallons: ' + gallons + ', price per gallon: ' + pricePerGallon + '\nNow you got milesDriven: ' + milesDriven + ', MPG: ' + MPG + ', totalSpent: ' + totalSpent);
 
     this.gaslog.push(
       {
         date: '10/26/17',
-        previousMileage: previousMileage,
-        currentMileage: currentMileage,
-        milesDriven: milesDriven,
-        gallons: gallons,
-        MPG: MPG,
-        pricePerGallon: pricePerGallon,
-        totalSpent: totalSpent
+        previousMileage,
+        currentMileage,
+        milesDriven,
+        gallons,
+        MPG,
+        pricePerGallon,
+        totalSpent
       }
     );
   };
