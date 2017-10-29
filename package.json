@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/Zhusufeng/auto-amigo/issues"
   },
-  "homepage": "https://github.com/Zhusufeng/auto-amigo#readme"
+  "homepage": "https://github.com/Zhusufeng/auto-amigo#readme",
+  "devDependencies": {
+    "mocha": "^4.0.1"
+  }
 }
