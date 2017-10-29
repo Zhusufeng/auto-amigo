@@ -1,5 +1,8 @@
 angular.module('index')
  .controller('mainCtrl', function() {
+   
+ })
+ .controller('gasCtrl', function() {
 
   this.gaslog = [
     {
