@@ -2,9 +2,9 @@ angular.module('index')
  .controller('mainCtrl', function() {
    
  })
- .controller('gasCtrl', function() {
+ .controller('gasCtrl', function($scope) {
 
-  this.gaslog = [
+  $scope.gaslog = [
     {
       date: '10/19/17',
       previousMileage: 99000,
@@ -17,7 +17,7 @@ angular.module('index')
     }
   ];
 
-  this.submit = function() {
+  $scope.submit = function() {
     let previousMileage = document.getElementById('previousMileage').value;
     let currentMileage = document.getElementById('currentMileage').value;
     let gallons = document.getElementById('gallons').value;
@@ -30,7 +30,7 @@ angular.module('index')
 
     console.log('You submitted previousMileage: ' + previousMileage + ', currentMileage: ' + currentMileage + ', gallons: ' + gallons + ', price per gallon: ' + pricePerGallon + '\nNow you got milesDriven: ' + milesDriven + ', MPG: ' + MPG + ', totalSpent: ' + totalSpent);
 
-    this.gaslog.push(
+    $scope.gaslog.push(
       {
         date: '10/26/17',
         previousMileage,
