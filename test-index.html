@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Auto Amigo Tests</title>
+    <!-- stylesheets -->
+    <!-- <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="//cdnjs.cloudflare.com/ajax/libs/mocha/1.13.0/mocha.css" rel="stylesheet" /> -->
+
+    <!-- angular scripts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.js"></script>
+    
+    <!-- testing scripts -->
+    <script src="https://cdn.rawgit.com/mochajs/mocha/2.2.5/mocha.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sinon.js/4.0.2/sinon.js"></script>
+    <script>
+      mocha.setup({
+        "ui": "bdd",
+        "reporter": "html"
+      });
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular-mocks.js"></script>
+  
+    <!-- project scripts -->
+    <script src="client/app/app.js"></script>
+    <script src="client/app/controllers/mainCtrl.js"></script>
+    <script src="client/app/components/gas.js"></script>
+  
+    <!-- tests -->
+    <script src="test/test.js"></script>
+</head>
+<body>
+  <div class="container" style="margin-top:30px;">
+    <h1>Auto Amigo Angular JS Tests</h1>
+    <h3>Using Mocha, Chai and Sinon</h3>
+    <div id="mocha"></div>
+  </div>
+
+  <script>
+    mocha.run();
+  </script>
+</body>
+</html>
