@@ -1,4 +1,5 @@
-var assert = require('assert');
+// var assert = require('assert');
+window.assert = chai.assert;
 
 describe('My first test with Mocha framework only', function() {
   describe('Simple data types with the same value', function() {
@@ -32,9 +33,14 @@ describe('gasCtrl', function() {
     });
   });
 
-  describe('controller', function() {
-    it('should have an array that will keep the gas log history', function() {
-      assert.exists(index.gaslog);
+  // describe('controller', function() {
+  //   it('should have an array that will keep the gas log history', function() {
+  //     assert.exists($scope.gaslog);
+  //   });
+  // });
+  describe('Simple data types with the same value', function() {
+    it('should equal each other', function() {
+      assert.equal(6, 6);
     });
-  })
+  });
 });
