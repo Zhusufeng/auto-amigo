@@ -17,7 +17,7 @@ describe('My second test with Chai library', function() {
   });
 });
 
-describe('gasCtrl', function() {
+describe('Testing gasCtrl', function() {
 
   // Define variables we want access to
   var gasCtrl;
@@ -33,15 +33,19 @@ describe('gasCtrl', function() {
     });
   });
 
-  describe('Simple data types with the same value', function() {
-    it('should equal each other', function() {
-      assert.equal(6, 6);
+  describe('gaslog', function() {
+    it('should exist', function() {
+      assert.exists(gasCtrl.gaslog);
     });
   });
 
-  describe('controller', function() {
-    it('should have an array that will keep the gas log history', function() {
-      assert.exists(gasCtrl.gaslog);
+  describe('submit function', function() {
+    it('should exist', function() {
+      assert.exists(gasCtrl.submit);
     });
+    it('should get previousMileage, currentMileage, gallons, pricePerGallon', function(){
+      // gasCtrl.submit()
+    });
+    it('should calculate milesDriven, MPG, totalSpent');
   });
 });
