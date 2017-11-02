@@ -33,14 +33,15 @@ describe('gasCtrl', function() {
     });
   });
 
-  // describe('controller', function() {
-  //   it('should have an array that will keep the gas log history', function() {
-  //     assert.exists($scope.gaslog);
-  //   });
-  // });
   describe('Simple data types with the same value', function() {
     it('should equal each other', function() {
       assert.equal(6, 6);
+    });
+  });
+
+  describe('controller', function() {
+    it('should have an array that will keep the gas log history', function() {
+      assert.exists(gasCtrl.gaslog);
     });
   });
 });
