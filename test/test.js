@@ -29,7 +29,7 @@ describe('gasCtrl', function() {
     // Inject
     inject(function($controller) {
       gasCtrl = $controller('gasCtrl');
-      console.log(gasCtrl);
+      console.log('gasCtrl is ', gasCtrl);
     });
   });
 
