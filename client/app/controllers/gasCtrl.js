@@ -25,10 +25,11 @@ angular.module('index')
     };
 
     this.calculateStats = function(cm, pm, g, ppg) {
-      let milesDriven = (cm - pm).toFixed(0);
-      let MPG = (milesDriven/g).toFixed(2);
-      let totalSpent = (g * ppg).toFixed(2);
-
+      let milesDriven = parseInt((cm - pm));
+      let MPG = parseFloat((milesDriven/g).toFixed(2));
+      let totalSpent = parseFloat((g * ppg).toFixed(2));
+      console.log('typeof milesDriven', typeof milesDriven);
+      console.log('typeof MPG', typeof MPG);
       return {milesDriven, MPG, totalSpent};
     };
 
