@@ -42,10 +42,32 @@ describe('Testing gasCtrl', function() {
   describe('submit function', function() {
     it('should exist', function() {
       assert.exists(gasCtrl.submit);
+    }); 
+  });
+
+  describe('createDate function', function() {
+    it('should exist', function() {
+      assert.exists(gasCtrl.createDate);
     });
-    it('should get previousMileage, currentMileage, gallons, pricePerGallon', function(){
-      // gasCtrl.submit()
+    it('should return a string', function() {
+      assert.strictEqual(gasCtrl.createDate().constructor, String);
+    }); 
+  });
+
+  describe('calculateStats function', function() {
+    it('should exist', function() {
+      assert.exists(gasCtrl.calculateStats);
     });
-    it('should calculate milesDriven, MPG, totalSpent');
+    it('should return an object', function() {
+      assert.strictEqual(gasCtrl.calculateStats().constructor, Object);
+    }); 
+    it('should calculate milesDriven, MPG and totalSpent', function() {
+      const actual = gasCtrl.calculateStats(1000, 500, 15, 3);
+      const expected = {milesDriven: 500, MPG: 33.33, totalSpent: 45.00};
+      console.log('actual is ', actual);
+      console.log('expected is ', expected);
+      assert.deepEqual(actual, expected);
+    }); 
+    
   });
 });
