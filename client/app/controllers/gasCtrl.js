@@ -14,26 +14,37 @@ angular.module('index')
       }
     ];
 
+    this.createDate = function() {
+      const today = new Date();
+      const month = today.getMonth() + 1;
+      const day = today.getDate();
+      const year = today.getFullYear();
+      const date = month + '/' + day + '/' + year;
+
+      return date;
+    };
+
+    this.calculateStats = function(cm, pm, g, ppg) {
+      let milesDriven = (cm - pm).toFixed(0);
+      let MPG = (milesDriven/g).toFixed(2);
+      let totalSpent = (g * ppg).toFixed(2);
+
+      return {milesDriven, MPG, totalSpent};
+    };
+
     this.submit = function() {
       let previousMileage = document.getElementById('previousMileage').value;
       let currentMileage = document.getElementById('currentMileage').value;
       let gallons = document.getElementById('gallons').value;
       let pricePerGallon = document.getElementById('pricePerGallon').value;
 
-      // Calculate 
-      let milesDriven = (currentMileage - previousMileage).toFixed(0);
-      let MPG = (milesDriven/gallons).toFixed(2); 
-      let totalSpent = (gallons * pricePerGallon).toFixed(2); 
+      // Calculate, use destructuring
+      let {milesDriven, MPG, totalSpent} = this.calculateStats(currentMileage, previousMileage, gallons, pricePerGallon);
 
       console.log('You submitted previousMileage: ' + previousMileage + ', currentMileage: ' + currentMileage + ', gallons: ' + gallons + ', price per gallon: ' + pricePerGallon + '\nNow you got milesDriven: ' + milesDriven + ', MPG: ' + MPG + ', totalSpent: ' + totalSpent);
 
       // Get date
-      let today = new Date();
-      let month = today.getMonth() + 1;
-      let day = today.getDate();
-      let year = today.getFullYear();
-      let date = month + '/' + day + '/' + year;
-      console.log('I made this date: ', date);
+      const date = this.createDate();
 
       this.gaslog.push(
         {
