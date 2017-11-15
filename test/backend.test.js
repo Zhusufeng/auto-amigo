@@ -97,4 +97,39 @@ describe('Database', () => {
       });
     });
   });
+
+  /* ---------------------------------------- */
+  /*           MAINTENANCE ENDPOINT           */
+  /* ---------------------------------------- */
+  describe('Maintenance', () => {
+    describe('GET /maintenance', () => {  
+      it('should GET all the maintenance entries', (done) => {
+      });
+    });
+
+    describe('POST /maintenance', () => {  
+      it('should POST a new maintenance entry', (done) => {
+      });
+    });
+
+    describe('GET /maintenance/:userid', () => {  
+      it('should GET a user\'s maintenance log given userid', (done) => {
+      });
+    });
+
+    describe('GET /maintenance/:userid/:maintenanceid', () => {  
+      it('should GET a maintenance entry given userid and maintenanceid', (done) => {
+      });
+    });
+
+    describe('PUT /maintenance/:userid/:maintenanceid', () => {  
+      it('should UPDATE a maintenance entry given the userid and maintenanceid', (done) => {
+      });
+    });
+
+    describe('DELETE /maintenance/:userid/:maintenanceid', () => {  
+      it('should DELETE a maintenance entry given the userid and maintenanceid', (done) => {
+      });
+    });
+  });
 });
