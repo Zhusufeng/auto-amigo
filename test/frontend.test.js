@@ -1,14 +1,6 @@
 // var assert = require('assert');
 window.assert = chai.assert;
 
-// Require dev-dependencies
-let chai = require('chai');
-let chaiHttp = require('chai-http');
-let server = require('../server/server');
-let should = chai.should();
-
-chai.use(chaiHttp);
-
 // describe('My first test with Mocha framework only', function() {
 //   describe('Simple data types with the same value', function() {
 //     it('should equal each other', function() {
@@ -81,8 +73,4 @@ describe('Testing gasCtrl', function() {
     }); 
     
   });
-});
-
-describe('Testing server', function() {
-  
 });
