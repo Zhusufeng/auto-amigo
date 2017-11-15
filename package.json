@@ -4,7 +4,7 @@
   "description": "Auto Amigo is your car friend",
   "main": "index.js",
   "scripts": {
-    "test": "mocha"
+    "test": "mocha test/backend.test.js"
   },
   "repository": {
     "type": "git",
