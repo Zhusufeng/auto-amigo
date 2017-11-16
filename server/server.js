@@ -8,17 +8,29 @@ app.use(bodyParser.json());
 // Load static assets from client folder
 app.use(express.static('client'));
 
+let users = [];
+
 app.route('/user')
   .get((req, res) => {
-    res.status(200).send('You made a GET to the /user endpoint');
+    res.status(200).send(users);
   })
   .post((req, res) => {
+    users.push(req.body);
     res.status(200).send('You made a POST to the /user endpoint');
   });
 
 app.route('/user/:id')
   .get((req, res) => {
-    res.status(200).send('You made a GET to the /user/:id endpoint');
+    let userid = req.params.id;
+    let userInfo = users.filter(user => {
+      if (user.userid === req.params.id) return user;
+    });
+    if (userInfo) {
+      res.status(200).send(userInfo);
+    } else {
+      res.status(200).send('You made an unsuccessful GET to the /user/:id endpoint');
+    }
+    
   })
   .put((req, res) => {
     res.status(200).send('You made a PUT to the /user/:id endpoint');
