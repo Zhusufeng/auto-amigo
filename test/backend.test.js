@@ -33,31 +33,31 @@ describe('Database', () => {
   });
 
   /* ---------------------------------------- */
-  /*              USERS ENDPOINT              */
+  /*              USER ENDPOINT              */
   /* ---------------------------------------- */
 
   describe('Users', () => {
-    describe('GET /users', () => {  
+    describe('GET /user', () => {  
       it('should GET all the users', (done) => {
       });
     });
 
-    describe('POST /users', () => {  
+    describe('POST /user', () => {  
       it('should POST a new user', (done) => {
       });
     });
 
-    describe('GET /users/:userid', () => {  
+    describe('GET /user/:userid', () => {  
       it('should GET a user by the given id', (done) => {
       });
     });
 
-    describe('PUT /users/:userid', () => {  
+    describe('PUT /user/:userid', () => {  
       it('should UPDATE a user given the id', (done) => {
       });
     });
 
-    describe('DELETE /users/:userid', () => {  
+    describe('DELETE /user/:userid', () => {  
       it('should DELETE a user given the id', (done) => {
       });
     });
