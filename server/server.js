@@ -23,7 +23,7 @@ app.route('/user/:id')
   .get((req, res) => {
     let userid = req.params.id;
     let userInfo = users.filter(user => {
-      if (user.userid === req.params.id) return user;
+      if (user.userid === userid) return user;
     });
     if (userInfo) {
       res.status(200).send(userInfo);
