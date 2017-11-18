@@ -25,12 +25,11 @@ app.route('/user/:id')
     let userInfo = users.filter(user => {
       if (user.userid === userid) return user;
     });
-    if (userInfo) {
-      res.status(200).send(userInfo);
+    if (userInfo.length <= 0) {
+      res.status(200).send('You made an unsuccessful GET to the /user/:id endpoint. User does not exist');
     } else {
-      res.status(200).send('You made an unsuccessful GET to the /user/:id endpoint');
+      res.status(200).send(userInfo);
     }
-    
   })
   .put((req, res) => {
     res.status(200).send('You made a PUT to the /user/:id endpoint');
