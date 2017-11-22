@@ -106,19 +106,45 @@ describe('Server', () => {
   //   });
   });
 
-  // /* ---------------------------------------- */
-  // /*               GAS ENDPOINT               */
-  // /* ---------------------------------------- */
-  // describe('Gas', () => {
-  //   describe('GET /gas', () => {  
-  //     it('should GET all the gas entries', (done) => {
-  //     });
-  //   });
+  /* ---------------------------------------- */
+  /*               GAS ENDPOINT               */
+  /* ---------------------------------------- */
+  describe('Gas', () => {
+    describe('GET /gas', () => {  
+      it('should GET all the gas entries', (done) => {
+        chai.request(server)
+        .get('/gas')
+        .end((err, res) => {
+          res.should.have.status(200);
+          done();
+        });
+      });
+    });
 
-  //   describe('POST /gas', () => {  
-  //     it('should POST a new gas entry', (done) => {
-  //     });
-  //   });
+    describe('POST /gas', () => {  
+      it('should POST a new gas entry', (done) => {
+        let fakeGas = {
+          date: '11/22/17',
+          previousMileage: 89500,
+          currentMileage: 90000,
+          milesDriven: 500,
+          gallons: 15,
+          MPG: 33.33,
+          pricePerGallon: 3,
+          totalSpent: 45
+        };
+
+        chai.request(server)
+          .post('/gas')
+          .send(fakeGas)
+          .end((err, res) => {
+              res.should.have.status(200);
+              res.body.should.be.a('object');
+              res.text.should.equal('You made a POST to the /gas endpoint');
+            done();
+          });
+      });
+    });
 
   //   describe('GET /gas/:userid', () => {  
   //     it('should GET a user\'s gas log given userid', (done) => {
@@ -139,7 +165,7 @@ describe('Server', () => {
   //     it('should DELETE a gas entry given the userid and gasid', (done) => {
   //     });
   //   });
-  // });
+  });
 
   // /* ---------------------------------------- */
   // /*           MAINTENANCE ENDPOINT           */
