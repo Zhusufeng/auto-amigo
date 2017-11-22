@@ -8,8 +8,11 @@ app.use(bodyParser.json());
 // Load static assets from client folder
 app.use(express.static('client'));
 
+// Temporary arrays until db is created
 let users = [];
+let gaslog = [];
 
+/* USER */
 app.route('/user')
   .get((req, res) => {
     res.status(200).send(users);
@@ -37,4 +40,15 @@ app.route('/user/:id')
   .delete((req, res) => {
     res.status(200).send('You made a DELETE to the /user/:id endpoint');
   });
+
+  /* GAS */
+  app.route('/gas')
+  .get((req, res) => {
+    res.status(200).send(gaslog);
+  })
+  .post((req, res) => {
+    gaslog.push(req.body);
+    res.status(200).send('You made a POST to the /gas endpoint');
+  });
+
 module.exports = app;
