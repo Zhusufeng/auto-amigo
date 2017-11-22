@@ -1,18 +1,10 @@
 angular.module('index')
-  .controller('gasCtrl', function() {
+  .controller('gasCtrl', function(gasService) {
 
-    this.gaslog = [
-      {
-        date: '10/19/2017',
-        previousMileage: 99000,
-        currentMileage: 99500,
-        milesDriven: 500,
-        gallons: 15,
-        MPG: 33.33,
-        pricePerGallon: 3.25,
-        totalSpent: 48.75
-      }
-    ];
+    this.gaslog = [];
+
+    // Get data from server
+    gasService.getGas;
 
     this.createDate = function() {
       const today = new Date();
