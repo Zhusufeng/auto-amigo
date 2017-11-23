@@ -2,7 +2,7 @@ angular.module('index')
   .service('gasService', function($http, $q) {
 
     this.getGasData = function(){
-      var defer = $q.defer();
+      const defer = $q.defer();
       $http.get('/gas')
         .then((res => {
           console.log('Success from getGasData!', res.data);
@@ -17,9 +17,17 @@ angular.module('index')
     };
 
     this.postGasData = function(data) {
+      const defer = $q.defer();
       $http.post('/gas', data)
-        .success(data => {
-          console.log('Success from postGasData!', data);
-        });
+        .then((res => {
+          console.log('Success from postGasData!', res);
+          defer.resolve(res);
+        }),
+        (err => {
+          console.log('Err from postGasData!', err);
+          defer.resolve(err);
+        })
+      );
+      return defer.promise;
     }
   });
