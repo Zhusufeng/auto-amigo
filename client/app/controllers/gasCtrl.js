@@ -42,7 +42,7 @@ angular.module('index')
       // Get date
       const date = this.createDate();
 
-      this.gaslog.push(
+      gasService.postGasData(
         {
           date,
           previousMileage,
@@ -53,6 +53,24 @@ angular.module('index')
           pricePerGallon,
           totalSpent
         }
-      );
+      )
+        .then(data => {
+          gasService.getGasData()
+          .then(data =>{
+            this.gaslog = data;
+          });
+        });
+      // this.gaslog.push(
+      //   {
+      //     date,
+      //     previousMileage,
+      //     currentMileage,
+      //     milesDriven,
+      //     gallons,
+      //     MPG,
+      //     pricePerGallon,
+      //     totalSpent
+      //   }
+      // );
     };
   });
