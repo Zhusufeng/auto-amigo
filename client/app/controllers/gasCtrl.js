@@ -4,7 +4,7 @@ angular.module('index')
     this.gaslog = [];
 
     // Get data from server
-    gasService.getGas;
+    gasService.getGasData();
 
     this.createDate = function() {
       const today = new Date();
