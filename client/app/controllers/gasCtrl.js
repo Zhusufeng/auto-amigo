@@ -6,7 +6,6 @@ angular.module('index')
     // Get data from server
     gasService.getGasData()
       .then(data =>{
-        console.log('I got a promise back', data);
         this.gaslog = data;
       });
 
