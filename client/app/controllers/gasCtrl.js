@@ -60,17 +60,5 @@ angular.module('index')
             this.gaslog = data;
           });
         });
-      // this.gaslog.push(
-      //   {
-      //     date,
-      //     previousMileage,
-      //     currentMileage,
-      //     milesDriven,
-      //     gallons,
-      //     MPG,
-      //     pricePerGallon,
-      //     totalSpent
-      //   }
-      // );
     };
   });
