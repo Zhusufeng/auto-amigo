@@ -11,7 +11,7 @@ app.use(express.static('client'));
 // Temporary arrays until db is created
 let users = [];
 let gaslog = [
-  {
+    {
     date: '10/19/2017',
     previousMileage: 99000,
     currentMileage: 99500,
@@ -59,7 +59,7 @@ app.route('/user/:id')
   })
   .post((req, res) => {
     gaslog.push(req.body);
-    res.status(200).send('You made a POST to the /gas endpoint');
+    res.status(200).send(req.body);
   });
 
 module.exports = app;
