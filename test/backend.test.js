@@ -116,6 +116,8 @@ describe('Server', () => {
         .get('/gas')
         .end((err, res) => {
           res.should.have.status(200);
+          res.body.should.be.a('array');
+          res.body.should.have.lengthOf(1);
           done();
         });
       });
@@ -140,7 +142,14 @@ describe('Server', () => {
           .end((err, res) => {
               res.should.have.status(200);
               res.body.should.be.a('object');
-              res.text.should.equal('You made a POST to the /gas endpoint');
+              res.body.date.should.be.a('string');
+              res.body.previousMileage.should.be.a('number');
+              res.body.currentMileage.should.be.a('number');
+              res.body.milesDriven.should.be.a('number');
+              res.body.gallons.should.be.a('number');
+              res.body.MPG.should.be.a('number');
+              res.body.pricePerGallon.should.be.a('number');              
+              res.body.totalSpent.should.be.a('number');
             done();
           });
       });
