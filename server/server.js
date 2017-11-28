@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
+const db = require('./db/index.js');
 
 // Parse to json
 app.use(bodyParser.json());
