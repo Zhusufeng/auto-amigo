@@ -1,5 +1,7 @@
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/test');
+let url = process.env.MONGODB_URI || 'mongodb://localhost/test';
+console.log('url is ', url);
+mongoose.connect(url);
 
 const db = mongoose.connection;
 
