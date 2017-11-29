@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
 const db = require('./db/index.js');
+const gas = require('./routes/gas.js');
 
 // Parse to json
 app.use(bodyParser.json());
@@ -11,18 +12,6 @@ app.use(express.static(__dirname + '/../client'));
 
 // Temporary arrays until db is created
 let users = [];
-let gaslog = [
-    {
-    date: '10/19/2017',
-    previousMileage: 99000,
-    currentMileage: 99500,
-    milesDriven: 500,
-    gallons: 15,
-    MPG: 33.33,
-    pricePerGallon: 3.25,
-    totalSpent: 48.75
-  }
-];
 
 /* USER */
 app.route('/user')
@@ -53,14 +42,9 @@ app.route('/user/:id')
     res.status(200).send('You made a DELETE to the /user/:id endpoint');
   });
 
-  /* GAS */
-  app.route('/gas')
-  .get((req, res) => {
-    res.status(200).send(gaslog);
-  })
-  .post((req, res) => {
-    gaslog.push(req.body);
-    res.status(200).send(req.body);
-  });
+/* GAS */
+app.route('/gas')
+  .get(gas.getGas)
+  .post(gas.postGas);
 
 module.exports = app;
