@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const Gas = require('./db/models/gas');
+const Gas = require('../db/models/gas');
 
 // Temp array until db is used
 let gaslog = [
