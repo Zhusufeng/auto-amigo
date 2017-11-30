@@ -23,8 +23,8 @@ angular.module('index')
       let milesDriven = parseInt((cm - pm));
       let MPG = parseFloat((milesDriven/g).toFixed(2));
       let totalSpent = parseFloat((g * ppg).toFixed(2));
-      console.log('typeof milesDriven', typeof milesDriven);
-      console.log('typeof MPG', typeof MPG);
+      // console.log('typeof milesDriven', typeof milesDriven);
+      // console.log('typeof MPG', typeof MPG);
       return {milesDriven, MPG, totalSpent};
     };
 
@@ -37,7 +37,7 @@ angular.module('index')
       // Calculate, use destructuring
       let {milesDriven, MPG, totalSpent} = this.calculateStats(currentMileage, previousMileage, gallons, pricePerGallon);
 
-      console.log('You submitted previousMileage: ' + previousMileage + ', currentMileage: ' + currentMileage + ', gallons: ' + gallons + ', price per gallon: ' + pricePerGallon + '\nNow you got milesDriven: ' + milesDriven + ', MPG: ' + MPG + ', totalSpent: ' + totalSpent);
+      // console.log('You submitted previousMileage: ' + previousMileage + ', currentMileage: ' + currentMileage + ', gallons: ' + gallons + ', price per gallon: ' + pricePerGallon + '\nNow you got milesDriven: ' + milesDriven + ', MPG: ' + MPG + ', totalSpent: ' + totalSpent);
 
       // Get date
       const date = this.createDate();
