@@ -17,7 +17,10 @@ const Gas = require('../db/models/gas');
 
 /* GET /gas route to retrieve all gas entries */
 const getGas = (req, res) => {
-  res.status(200).send(gaslog);
+  Gas.find(function(err, gasEntries) {
+    if (err) return console.error(err);
+    res.status(200).send(gasEntries);
+  });
 };
 
 /* POST /gas route to add a gas entry */
