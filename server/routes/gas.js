@@ -22,7 +22,8 @@ const getGas = (req, res) => {
 
 /* POST /gas route to add a gas entry */
 const postGas = (req, res) => {
-  var newEntry = new Gas({
+  // Create new gasEntry
+  var gasEntry = new Gas({
     date: req.body.date,
     previousMileage: req.body.previousMileage,
     currentMileage: req.body.currentMileage,
@@ -32,6 +33,12 @@ const postGas = (req, res) => {
     pricePerGallon: req.body.pricePerGallon,
     totalSpent: req.body.totalSpent
   });
+  
+  // Save gasEntry to database
+  gasEntry.save(function (err, gasEntry) {
+    if (err) return console.error(err);
+  });
+
   // gaslog.push(req.body);
   res.status(200).send(req.body);
 };
