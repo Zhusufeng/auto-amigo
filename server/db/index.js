@@ -6,7 +6,7 @@ if (process.env.NODE_ENV === 'dev') {
 } else {
   url = 'mongodb://localhost/test'
 }
-console.log('url is ', url);
+console.log('DB url is ', url);
 
 mongoose.connect(url);
 
