@@ -1,3 +1,8 @@
+// Set env variable to test
+process.env.NODE_ENV = 'test';
+const mongoose = require('mongoose');
+const Gas = require('../server/db/models/gas');
+
 // Require dev-dependencies
 let chai = require('chai');
 let chaiHttp = require('chai-http');
@@ -23,12 +28,12 @@ describe('Server', () => {
 // describe('Database', () => {
 //   describe('connection', () => {
 //     it('should connect to database', (done) => {
-//       // chai.request(server)
-//       // .get('/')
-//       // .end((err, res) => {
-//       //   expect(res).to.have.status(200);
-//       //   done();
-//       // });
+//       chai.request(server)
+//       .get('/')
+//       .end((err, res) => {
+//         expect(res).to.have.status(200);
+//         done();
+//       });
 //     });
 //   });
 
@@ -109,7 +114,16 @@ describe('Server', () => {
   /* ---------------------------------------- */
   /*               GAS ENDPOINT               */
   /* ---------------------------------------- */
+  
   describe('Gas', () => {
+
+    // Before each test, we empty the database
+    beforeEach(done => { 
+      Gas.remove({}, (err) => {
+        done();
+      });
+    });
+
     describe('GET /gas', () => {  
       it('should GET all the gas entries', (done) => {
         chai.request(server)
@@ -117,7 +131,6 @@ describe('Server', () => {
         .end((err, res) => {
           res.should.have.status(200);
           res.body.should.be.a('array');
-          res.body.should.have.lengthOf(1);
           done();
         });
       });
