@@ -13,13 +13,8 @@ app.use(express.static(__dirname + '/../client'));
 
 /* USER */
 app.route('/user')
-  .get((req, res) => {
-    res.status(200).send(users);
-  })
-  .post((req, res) => {
-    users.push(req.body);
-    res.status(200).send('You made a POST to the /user endpoint');
-  });
+  .get(user.getUsers)
+  .post(user.postUser);
 
 app.route('/user/:id')
   .get((req, res) => {
