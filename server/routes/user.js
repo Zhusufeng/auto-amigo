@@ -28,9 +28,12 @@ const getUser = (req, res) => {
 /* PUT /user/:id route to update specific user info */
 const putUser = (req, res) => {
   res.status(200).send('You made a PUT to the /user/:id endpoint');
-}
+};
 
 /* DELETE /user/:id route to delete specific user */
 const deleteUser = (req, res) => {
   res.status(200).send('You made a DELETE to the /user/:id endpoint');
-}
+};
+
+// Export functions via ES6
+module.exports = { getUsers, postUser, getUser, putUser, deleteUser };
