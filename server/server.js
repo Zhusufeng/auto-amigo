@@ -17,23 +17,9 @@ app.route('/user')
   .post(user.postUser);
 
 app.route('/user/:id')
-  .get((req, res) => {
-    let userid = req.params.id;
-    let userInfo = users.filter(user => {
-      if (user.userid === userid) return user;
-    });
-    if (userInfo.length <= 0) {
-      res.status(200).send('You made an unsuccessful GET to the /user/:id endpoint. User does not exist');
-    } else {
-      res.status(200).send(userInfo);
-    }
-  })
-  .put((req, res) => {
-    res.status(200).send('You made a PUT to the /user/:id endpoint');
-  })
-  .delete((req, res) => {
-    res.status(200).send('You made a DELETE to the /user/:id endpoint');
-  });
+  .get(user.getUser)
+  .put(user.putUser)
+  .delete(user.deleteUser);
 
 /* GAS */
 app.route('/gas')
