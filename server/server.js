@@ -3,15 +3,13 @@ const app = express();
 const bodyParser = require('body-parser');
 const db = require('./db/index.js');
 const gas = require('./routes/gas.js');
+const user = require('./routes/user');
 
 // Parse to json
 app.use(bodyParser.json());
 
 // Load static assets from client folder
 app.use(express.static(__dirname + '/../client'));
-
-// Temporary arrays until db is created
-let users = [];
 
 /* USER */
 app.route('/user')
