@@ -13,10 +13,24 @@ const postUser = (req, res) => {
 };
 
 /* GET /user/:id route to retrieve specific user info */
-// getUser
+const getUser = (req, res) => {
+  let userid = req.params.id;
+  let userInfo = users.filter(user => {
+    if (user.userid === userid) return user;
+  });
+  if (userInfo.length <= 0) {
+    res.status(200).send('You made an unsuccessful GET to the /user/:id endpoint. User does not exist');
+  } else {
+    res.status(200).send(userInfo);
+  }
+};
 
 /* PUT /user/:id route to update specific user info */
-// putUser
+const putUser = (req, res) => {
+  res.status(200).send('You made a PUT to the /user/:id endpoint');
+}
 
 /* DELETE /user/:id route to delete specific user */
-// deleteUser
+const deleteUser = (req, res) => {
+  res.status(200).send('You made a DELETE to the /user/:id endpoint');
+}
