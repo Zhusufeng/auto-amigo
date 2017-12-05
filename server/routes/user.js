@@ -2,10 +2,15 @@
 let users = [];
 
 /* GET /user route to retrieve all user entries */
-// getUsers
+const getUsers = (req, res) => {
+  res.status(200).send(users);
+};
 
 /* POST /user route to post a user */
-// postUser
+const postUser = (req, res) => {
+  users.push(req.body);
+  res.status(200).send('You made a POST to the /user endpoint');
+};
 
 /* GET /user/:id route to retrieve specific user info */
 // getUser
