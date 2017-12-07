@@ -7,3 +7,5 @@ function GasComponent() {
   };
 }
   // });
+
+module.exports = GasComponent;
