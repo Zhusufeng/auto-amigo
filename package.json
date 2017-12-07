@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/Zhusufeng/auto-amigo#readme",
   "devDependencies": {
+    "angular": "^1.6.7",
     "chai": "^4.1.2",
     "chai-http": "^3.0.0",
     "html-webpack-plugin": "^2.30.1",
