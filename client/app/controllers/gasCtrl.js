@@ -65,3 +65,5 @@ function gasCtrl(gasService) {
   };
 }
   // });
+
+module.exports = gasCtrl;
