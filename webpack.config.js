@@ -1,9 +1,13 @@
+const webpack = require('webpack');
 const path = require('path');
 
 module.exports = {
-  entry: './index.js',
+  entry: {
+    app: './client/app/app.js',
+    vendor: ['angular']
+  },
   output: {
-    filename: 'bundle.js',
-    path: path.resolve(__dirname, 'client')
+    filename: 'app.bundle.js',
+    path: __dirname + 'client/js'
   }
 }
