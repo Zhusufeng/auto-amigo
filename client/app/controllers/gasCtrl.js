@@ -1,3 +1,4 @@
+'use strict';
 // angular.module('index')
 //   .controller('gasCtrl', function(gasService) {
 GasCtrl.$inject = ['gasService'];
