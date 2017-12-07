@@ -8,7 +8,7 @@ module.exports = {
   },
   output: {
     filename: 'app.bundle.js',
-    path: __dirname + 'client/js'
+    path: __dirname + '/client/js'
   },
   plugins: [
     new webpack.optimize.CommonsChunkPlugin({
