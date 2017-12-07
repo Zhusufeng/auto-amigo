@@ -1,8 +1,8 @@
 'use strict';
 // angular.module('index')
 //   .controller('gasCtrl', function(gasService) {
-GasCtrl.$inject = ['gasService'];
-function GasCtrl(gasService) {
+gasCtrl.$inject = ['gasService'];
+function gasCtrl(gasService) {
   this.gaslog = [];
 
   // Get data from server
