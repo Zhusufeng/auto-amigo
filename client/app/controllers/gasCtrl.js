@@ -1,7 +1,7 @@
 // angular.module('index')
 //   .controller('gasCtrl', function(gasService) {
-GasCtrl.$inject = ['GasService'];
-function GasCtrl() {
+GasCtrl.$inject = ['gasService'];
+function GasCtrl(gasService) {
   this.gaslog = [];
 
   // Get data from server
