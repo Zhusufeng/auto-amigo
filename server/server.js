@@ -9,7 +9,7 @@ const user = require('./routes/user');
 app.use(bodyParser.json());
 
 // Load static assets from client folder
-app.use(express.static(__dirname + '/../client'));
+app.use(express.static(__dirname + '/../client/js'));
 
 /* USER */
 app.route('/user')
