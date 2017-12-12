@@ -6,7 +6,7 @@
   "scripts": {
     "start": "NODE_ENV=dev node index.js",
     "test": "mocha --timeout 10000 test/backend.test.js",
-    "bundle": "webpack-dev-server"
+    "bundle": "webpack --watch"
   },
   "repository": {
     "type": "git",
