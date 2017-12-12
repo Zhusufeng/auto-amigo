@@ -7,6 +7,6 @@ angular.module('index').component('gas', {
   controller: 'gasCtrl',
   // template: "<span>Hewwwwo</span>"
   // templateUrl: '../views/gas.html' // this is based on where index.html is located, worked with webpack-dev-server when went to /client/js
-  template: require('../views/gas.html')
+  template: require('./views/gas.html') // path based on index.js, to get to work with html loader
   
 });
