@@ -1,5 +1,5 @@
 const angular = require('angular');
-import uirouter from 'angular-ui-router';
+const uirouter = require('angular-ui-router');
 
 angular.module('index', [uirouter]);
 
