@@ -15,10 +15,11 @@ function routes($urlRouterProvider, $stateProvider) {
       template: '<span>Login</span>'
     })
     .state('signup', {
-      url: 'signup',
+      url: '/signup',
       template: '<span>Sign Up</span>'
-    })
-  $urlRouterProvider.otherwise('/')
+    });
+  $urlRouterProvider
+    .otherwise('/');
 }
 
 module.exports = routes;
