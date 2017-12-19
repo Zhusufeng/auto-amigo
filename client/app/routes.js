@@ -2,7 +2,7 @@ routes.$inject = ['$urlRouterProvider', '$stateProvider'];
 
 function routes($urlRouterProvider, $stateProvider) {
   $stateProvider
-    .state('home', {
+    .state('gas', {
       url: '/',
       template: '<gas></gas>'
     })
