@@ -8,15 +8,15 @@ function routes($urlRouterProvider, $stateProvider) {
     })
     .state('splash', {
       url: '/splash',
-      template: '<span>Splash</span>'
+      template: '<splash></splash>'
     })
     .state('login', {
       url: '/login',
-      template: '<span>Login</span>'
+      template: '<login></login>'
     })
     .state('signup', {
       url: '/signup',
-      template: '<span>Sign Up</span>'
+      template: '<signup></signup>'
     });
   $urlRouterProvider
     .otherwise('/');
