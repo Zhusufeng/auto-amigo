@@ -1,5 +1,24 @@
 <div>
-  You are at Login Component
+  <!-- You are at Login Component -->
+  <div>
+    <form ng-submit="">
+      <fieldset>
+        <legend>Login</legend>
+        <p>
+          Email: <BR>
+          <input type="text" name="email" placeholder="Email">
+        </p>
+        <p>
+          Password: <BR>
+          <input type="text" name="password" placeholder="Password"><BR>
+        </p>
+        <input type="submit" name="submit" value="Submit"><BR>
+        <p>
+            Haven't made an account? Sign up <a ui-sref="signup">here</a>!
+        </p>  
+      </fieldset>
+    </form>
+  </div>
   <p>
     <a ui-sref="home">Back</a>
   </p>
