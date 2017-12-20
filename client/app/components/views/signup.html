@@ -1,6 +1,25 @@
 <div>
-  You are at Sign Up Component
-  <p>
-    <a ui-sref="home">Back</a>
-  </p>
-</div>
+    <!-- You are at Signup Component -->
+    <div>
+      <form ng-submit="">
+        <fieldset>
+          <legend>Sign Up</legend>
+          <p>
+            Email: <BR>
+            <input type="text" name="email" placeholder="Email">
+          </p>
+          <p>
+            Password: <BR>
+            <input type="text" name="password" placeholder="Password"><BR>
+          </p>
+          <input type="submit" name="submit" value="Submit"><BR>
+          <p>
+            Already have an account? Login <a ui-sref="login">here</a>!
+          </p>  
+        </fieldset>
+      </form>
+    </div>
+    <p>
+      <a ui-sref="home">Back</a>
+    </p>
+  </div>
