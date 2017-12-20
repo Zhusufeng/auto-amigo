@@ -6,8 +6,8 @@ function routes($urlRouterProvider, $stateProvider) {
       url: '/',
       template: '<gas></gas>'
     })
-    .state('splash', {
-      url: '/splash',
+    .state('home', {
+      url: '/home',
       template: '<splash></splash>'
     })
     .state('login', {
