@@ -7,6 +7,7 @@ const bodyParser = require('body-parser');
 const db = require('./db/index.js');
 
 // Routes
+const login = require('./routes/login');
 const gas = require('./routes/gas');
 const user = require('./routes/user');
 
@@ -23,6 +24,10 @@ app.use(session({
 }));
 
 // Routes
+/* LOGIN */
+app.route('/login')
+  .post(login.postLogin);
+
 /* USER */
 app.route('/user')
   .get(user.getUsers)
