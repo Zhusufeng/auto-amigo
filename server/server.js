@@ -1,16 +1,28 @@
+// Packages
 const express = require('express');
-const app = express();
+const session = require('express-session');
 const bodyParser = require('body-parser');
+
+// Database
 const db = require('./db/index.js');
-const gas = require('./routes/gas.js');
+
+// Routes
+const gas = require('./routes/gas');
 const user = require('./routes/user');
 
-// Parse to json
-app.use(bodyParser.json());
+// Create instance
+const app = express();
 
-// Load static assets from client folder
-app.use(express.static(__dirname + '/../client/js'));
+// Middleware
+app.use(bodyParser.json()); // Parse to json
+app.use(express.static(__dirname + '/../client/js')); // Load static assets from client folder
+app.use(session({
+  secret: 'notASecretForNow',
+  resave: false, // save session even if not modified
+  saveUninitialized: true // save session even if new and not modified
+}));
 
+// Routes
 /* USER */
 app.route('/user')
   .get(user.getUsers)
