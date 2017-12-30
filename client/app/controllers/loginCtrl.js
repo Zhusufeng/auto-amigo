@@ -7,6 +7,7 @@ function loginCtrl(authService) {
     const password = document.querySelector('[name=password]').value;
 
     console.log(`You hit submit with email ${email} and password ${password}`);
+    authService.postLoginData(email);
   }
 }
 
