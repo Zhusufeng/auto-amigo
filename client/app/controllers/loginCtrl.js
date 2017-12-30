@@ -1,4 +1,5 @@
-function loginCtrl(){
+loginCtrl.$inject = ['authService'];
+function loginCtrl(authService) {
 
   this.submitLogin = function() {
 
