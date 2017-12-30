@@ -1,4 +1,3 @@
-const db = require('./db/index.js');
 const User = require('../db/models/user');
 
 /* POST /login route to find or create a User entry */
