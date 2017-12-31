@@ -6,6 +6,9 @@ function authService($http, $q) {
     return $http({
       method: 'POST',
       url: '/login',
+      headers: {
+        'Content-Type': 'application/json'
+      },
       data: info
     })
     .then(res => {
