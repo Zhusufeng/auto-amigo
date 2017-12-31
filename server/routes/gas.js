@@ -10,7 +10,7 @@ const getUsersGas = (req, res) => {
   console.log('req.session is ', req.session);
   console.log(`req.session._id is ${req.session.user._id}`);
 
-  if (!req.session.user._id) {
+  if (!req.session.user) {
     res.status(200).send({error: 'Not logged in'});
   } else {
     // Create query to find if username is in the database
