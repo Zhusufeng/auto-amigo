@@ -31,6 +31,14 @@ app.use(session({
 app.route('/login')
   .post(login.postLogin);
 
+/* LOGOUT */
+app.post('/logout', (req, res) => {
+  req.session.destroy(() => {
+    console.log('Session ended! User logged out');
+    res.status(200).send({message: 'User logged out'}); // TODO: This should redirect to log in 
+  });
+});
+
 /* USER */
 app.route('/user')
   .get(user.getUsers)
