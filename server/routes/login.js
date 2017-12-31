@@ -18,14 +18,14 @@ const postLogin = (req, res) => {
     if (user) isFound = true;
   })
   .then(data => {
-    console.log('Here is the data passed from findQuery.exec');
+    console.log('Here is the data passed from findQuery.exec', data);
     console.log('isFound is ', isFound);
 
     if (isFound) {
       res.status(200).send(data);
     } else {
       // Create user
-      let newUser = new User({ name: name});
+      let newUser = new User({ username: name});
 
       // Save user to the database
       newUser.save(function(err, newUser) {
