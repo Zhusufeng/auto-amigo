@@ -6,44 +6,48 @@
   <p>
     Keep track of your gas history here!
   </p>
-  <form id="gasForm" ng-submit="$ctrl.submit()">
-    <div class="form-row">
-      <div class="form-group col-md-3">
-        <label for="previousMileage">Previous Mileage</label>
-        <input type="text" class="form-control" id="previousMileage" name="previousMileage">
+  <div>
+    <form id="gasForm" ng-submit="$ctrl.submit()">
+      <div class="form-row">
+        <div class="form-group col-md-3">
+          <label for="previousMileage">Previous Mileage</label>
+          <input type="text" class="form-control" id="previousMileage" name="previousMileage">
+        </div>
+        <div class="form-group col-md-3">
+          <label for="currentMileage">Current Mileage</label>
+          <input type="text" class="form-control" id="currentMileage">
+        </div>
+        <div class="form-group col-md-3">
+          <label for="gallons">Gallons</label>
+          <input type="text" class="form-control" id="gallons">
+        </div>
+        <div class="form-group col-md-3">
+          <label for="pricePerGallon">Price Per Gallon</label>
+          <input type="text" class="form-control" id="pricePerGallon">
+        </div>
+        <div>
+          <button class="btn btn-primary" id="submit" type="submit">Submit</button>
+        </div>
       </div>
-      <div class="form-group col-md-3">
-        <label for="currentMileage">Current Mileage</label>
-        <input type="text" class="form-control" id="currentMileage">
-      </div>
-      <div class="form-group col-md-3">
-        <label for="gallons">Gallons</label>
-        <input type="text" class="form-control" id="gallons">
-      </div>
-      <div class="form-group col-md-3">
-        <label for="pricePerGallon">Price Per Gallon</label>
-        <input type="text" class="form-control" id="pricePerGallon">
-      </div>
-      <div>
-        <button class="btn btn-primary" id="submit" type="submit">Submit</button>
-      </div>
-    </div>
-  </form>
+    </form>
+  </div>
   
-  <table>
+  <table class="table table-hover">
     <thead>
-      <th>Date</th>
-      <th>Previous Mileage</th>
-      <th>Current Mileage</th>
-      <th>Miles Driven</th>
-      <th>Gallons</th>
-      <th>MPG</th>
-      <th>Price per Gallon</th>
-      <th>Total Spent</th>
+      <tr>
+        <th scope="col">Date</th>
+        <th scope="col">Previous Mileage</th>
+        <th scope="col">Current Mileage</th>
+        <th scope="col">Miles Driven</th>
+        <th scope="col">Gallons</th>
+        <th scope="col">MPG</th>
+        <th scope="col">Price per Gallon</th>
+        <th scope="col">Total Spent</th>
+      </tr>
     </thead>
     <tbody id="gas">
       <tr ng-repeat="entry in $ctrl.gaslog">
-        <td>{{entry.date}}</td>
+        <th scope="row">{{entry.date}}</th>
         <td>{{entry.previousMileage}}</td>
         <td>{{entry.currentMileage}}</td>
         <td>{{entry.milesDriven}}</td>
