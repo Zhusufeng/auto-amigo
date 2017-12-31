@@ -1,4 +1,4 @@
-<div>
+<div class="container-fluid">
   <h1>Auto Amigo</h1>
   <p>
     <a ui-sref="home">Go to Splash</a>
@@ -6,12 +6,26 @@
   <p>
     Keep track of your gas history here!
   </p>
-  <form id="gasForm">
-    Previous Mileage: <input id="previousMileage" type="text"></input>
-    Current Mileage: <input id="currentMileage" type="text"></input>
-    Gallons: <input id="gallons" type="text"></input>
-    Price per Gallon: <input id="pricePerGallon" type="text"></input>
-    <input id="submit" type="submit" value="Submit" ng-click="$ctrl.submit()"></input>
+  <form id="gasForm" ng-submit="$ctrl.submit()">
+    <div class="form-row">
+      <div class="form-group col-md-3">
+        <label for="previousMileage">Previous Mileage</label>
+        <input type="text" class="form-control" id="previousMileage" name="previousMileage">
+      </div>
+      <div class="form-group col-md-3">
+          <label for="currentMileage">Current Mileage</label>
+          <input type="text" class="form-control" id="currentMileage">
+      </div>
+      <div class="form-group col-md-3">
+          <label for="gallons">Gallons</label>
+          <input type="text" class="form-control" id="gallons">
+      </div>
+      <div class="form-group col-md-3">
+          <label for="pricePerGallon">Price Per Gallon</label>
+          <input type="text" class="form-control" id="pricePerGallon">
+      </div>
+    </div>
+    <button class="btn btn-primary" id="submit" type="submit">Submit</button>
   </form>
   
   <table>
