@@ -39,6 +39,13 @@ app.post('/logout', (req, res) => {
   });
 });
 
+/* GAS */
+app.route('/gas')
+  .get(gas.getUsersGas)
+  .post(gas.postUsersGas)
+  // .get(gas.getGas)
+  // .post(gas.postGas)
+
 /* USER */
 app.route('/user')
   .get(user.getUsers)
@@ -48,10 +55,5 @@ app.route('/user/:id')
   .get(user.getUser)
   .put(user.putUser)
   .delete(user.deleteUser);
-
-/* GAS */
-app.route('/gas')
-  .get(gas.getGas)
-  .post(gas.postGas);
 
 module.exports = app;
