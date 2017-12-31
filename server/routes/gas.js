@@ -8,11 +8,12 @@ const util = require('../session-utility');
 /* GET /gas route to retrieve a user's gas entries */
 const getUsersGas = (req, res) => {
   console.log('req.session is ', req.session);
-  console.log(`req.session._id is ${req.session.user._id}`);
 
   if (!req.session.user) {
     res.status(200).send({error: 'Not logged in'});
   } else {
+    console.log(`req.session._id is ${req.session.user._id}`);
+    
     // Create query to find if username is in the database
     let findQuery = User.findOne({_id: req.session.user._id});
 
