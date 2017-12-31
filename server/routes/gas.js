@@ -7,8 +7,8 @@ const util = require('../session-utility');
 
 /* GET /gas route to retrieve a user's gas entries */
 const getUsersGas = (req, res) => {
-  console.log(`req.session is ${req.session}`);
-  console.log(`req.session._id is ${req.session._id}`);
+  console.log('req.session is ', req.session);
+  // console.log(`req.session._id is ${req.session._id}`);
 
   if (!req.session._id) {
     res.status(200).send({error: 'Not logged in'});
