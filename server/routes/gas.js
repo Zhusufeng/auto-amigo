@@ -8,13 +8,13 @@ const util = require('../session-utility');
 /* GET /gas route to retrieve a user's gas entries */
 const getUsersGas = (req, res) => {
   console.log('req.session is ', req.session);
-  // console.log(`req.session._id is ${req.session._id}`);
+  console.log(`req.session._id is ${req.session.user._id}`);
 
   if (!req.session._id) {
     res.status(200).send({error: 'Not logged in'});
   } else {
     // Create query to find if username is in the database
-    let findQuery = User.findOne({_id: req.session._id});
+    let findQuery = User.findOne({_id: req.session.user._id});
 
     // Execute query
     findQuery.exec(function(err, user) {
@@ -30,8 +30,8 @@ const getUsersGas = (req, res) => {
 
 /* POST /gas route to add a user's gas entry */
 const postUsersGas = (req, res) => {
-  console.log(`req.session is ${req.session}`);
-  console.log(`req.session._id is ${req.session._id}`);
+  console.log('req.session is ', req.session);
+  console.log(`req.session._id is ${req.session.user._id}`);
 
   // Create new gasEntry
   var gasEntry = new Gas({
@@ -54,7 +54,7 @@ const postUsersGas = (req, res) => {
     console.log(`gasEntry is ${gasEntry}`);
 
     // Create query to grab userInfo in the database
-    let findQuery = User.findOne({_id: req.session._id});
+    let findQuery = User.findOne({_id: req.session.user._id});
 
     // Execute query
     findQuery.exec(function(err, user) {
