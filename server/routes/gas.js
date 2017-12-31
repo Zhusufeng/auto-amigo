@@ -28,8 +28,11 @@ const getUsersGas = (req, res) => {
   }
 };
 
-/* POST /gas route to add a gas entry */
-const postGas = (req, res) => {
+/* POST /gas route to add a user's gas entry */
+const postUsersGas = (req, res) => {
+  console.log(`req.session is ${req.session}`);
+  console.log(`req.session._id is ${req.session._id}`);
+
   // Create new gasEntry
   var gasEntry = new Gas({
     date: req.body.date,
@@ -45,8 +48,25 @@ const postGas = (req, res) => {
   // Save gasEntry to database
   gasEntry.save(function (err, gasEntry) {
     if (err) return console.error(err);
-    res.status(200).send(req.body);
-  }); 
+    // res.status(200).send(req.body);
+  })
+  .then(gasEntry => {
+    console.log(`gasEntry is ${gasEntry}`);
+
+    // Create query to grab userInfo in the database
+    let findQuery = User.findOne({_id: req.session._id});
+
+    // Execute query
+    findQuery.exec(function(err, user) {
+      if (err) console.error('Error in User.findOne: ', err);
+    })
+    .then((userInfo) => {
+      console.log(`userInfo is ${userInfo}`);
+      userInfo.gaslog.push(gasEntry);
+      
+      res.status(200).send(gasEntry);
+    });
+  });
 };
 
 /* Below functions are now deprecated but can be useful for debugging */
