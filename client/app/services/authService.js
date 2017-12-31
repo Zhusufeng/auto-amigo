@@ -16,6 +16,17 @@ function authService($http, $q) {
       return res;
     });
   };
+
+  this.postLogout = () => {
+    return $http({
+      method: 'POST',
+      url: '/logout'
+    })
+    .then(res => {
+      console.log('res from server is ', res);
+      return res;
+    });
+  };
 }
 
 module.exports = authService;
