@@ -37,4 +37,4 @@ const postLogin = (req, res) => {
   }); 
 };
 
-module.exports = postLogin;
+module.exports = {postLogin};
