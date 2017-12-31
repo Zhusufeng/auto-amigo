@@ -17,6 +17,9 @@ const app = express();
 // Middleware
 app.use(bodyParser.json()); // Parse to json
 app.use(express.static(__dirname + '/../client/js')); // Load static assets from client folder
+
+// Session
+const util = require('./session-utility');
 app.use(session({
   secret: 'notASecretForNow',
   resave: false, // save session even if not modified
