@@ -1,11 +1,4 @@
-// angular.module('index')
-//   .component('gas', {
-function GasComponent() {
-  return {
-    controller: 'gasCtrl',
-    templateUrl: '/views/gas.html'
-  };
-}
-  // });
-
-module.exports = GasComponent;
+module.exports = {
+  controller: 'gasCtrl',
+  template: require('./views/gas.html')
+};
