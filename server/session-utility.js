@@ -13,4 +13,4 @@ const createSession = (req, res, newUser) => {
   });
 }
 
-module.exports = {};
+module.exports = {checkAuth, createSession};
