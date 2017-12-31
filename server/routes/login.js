@@ -1,4 +1,8 @@
+// Require database User model
 const User = require('../db/models/user');
+
+// Require session methods
+const util = require('../session-utility');
 
 /* POST /login route to find or create a User entry */
 const postLogin = (req, res) => {
@@ -6,7 +10,7 @@ const postLogin = (req, res) => {
 
   let name = req.body.email;
 
-  let isFound = false;
+  // let isFound = false;
 
   // Create query to find if username is in the database
   let findQuery = User.findOne({username: name});
@@ -15,14 +19,16 @@ const postLogin = (req, res) => {
   findQuery.exec(function(err, user) {
     if (err) console.error('Error in User.findOne: ', err);
     console.log(`user was found: ${user}`);
-    if (user) isFound = true;
+    // if (user) isFound = true;
   })
   .then(data => {
     console.log('Here is the data passed from findQuery.exec', data);
-    console.log('isFound is ', isFound);
+    // console.log('isFound is ', isFound);
 
-    if (isFound) {
-      res.status(200).send(data);
+    if (data) {
+      // Create session
+      util.createSession(req, res, data);
+      // res.status(200).send(data);
     } else {
       // Create user
       let newUser = new User({ username: name});
@@ -31,7 +37,8 @@ const postLogin = (req, res) => {
       newUser.save(function(err, newUser) {
         if (err) console.error('Error in newUser.save: ', err);
         console.log(newUser);
-        res.status(201).send(newUser);
+        util.createSession(req, res, newUser);        
+        // res.status(201).send(newUser);
       });
     }
   }); 
