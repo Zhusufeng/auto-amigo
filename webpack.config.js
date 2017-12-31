@@ -13,7 +13,11 @@ module.exports = {
   },
   module: {
     loaders: [
-      { test: /\.html$/, loader: 'html-loader' }
+      { test: /\.html$/, loader: 'html-loader' },
+      {
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader']
+      }
     ]
   },
   // plugins: [
