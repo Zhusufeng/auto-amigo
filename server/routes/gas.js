@@ -63,8 +63,10 @@ const postUsersGas = (req, res) => {
     .then((userInfo) => {
       console.log(`userInfo is ${userInfo}`);
       userInfo.gaslog.push(gasEntry);
-      
-      res.status(200).send(gasEntry);
+      userInfo.save((err, userInfo) => {
+        if (err) return console.error(err);
+        res.status(201).send(gasEntry);
+      });
     });
   });
 };
