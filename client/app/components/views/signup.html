@@ -1,25 +1,25 @@
-<div>
-    <!-- You are at Signup Component -->
-    <div>
-      <form ng-submit="">
-        <fieldset>
-          <legend>Sign Up</legend>
-          <p>
-            Email: <BR>
-            <input type="text" name="email" placeholder="Email">
-          </p>
-          <p>
-            Password: <BR>
-            <input type="text" name="password" placeholder="Password"><BR>
-          </p>
-          <input type="submit" name="submit" value="Submit"><BR>
-          <p>
-            Already have an account? Login <a ui-sref="login">here</a>!
-          </p>  
-        </fieldset>
-      </form>
-    </div>
-    <p>
-      <a ui-sref="home">Back</a>
-    </p>
+<div class="container-fluid">
+  <!-- You are at Signup Component -->
+  <div>
+    <form ng-submit="">
+      <fieldset>
+        <legend>Sign Up</legend>
+        <div class="form-group">
+          <label for="email">Email address</label>
+          <input class="form-control" type="text" name="email" id="email" placeholder="Email">
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input class="form-control" type="password" name="password" id="password" placeholder="Password">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+        <div>
+          Already have an account? Login <a ui-sref="login">here</a>!
+        </div>  
+      </fieldset>
+    </form>
   </div>
+  <p>
+    <a ui-sref="home">Back</a>
+  </p>
+</div>
