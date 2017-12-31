@@ -2,9 +2,9 @@ const User = require('../db/models/user');
 
 /* POST /login route to find or create a User entry */
 const postLogin = (req, res) => {
-  console.log(req);
+  console.log(req.body);
 
-  let name = req.body.username;
+  let name = req.body.email;
 
   let isFound = false;
 
