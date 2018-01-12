@@ -28,4 +28,15 @@ To start the app, use the command:
 npm start
 ```
 
+There are multiple ways to keep working on the project. If you want webpack to watch your saves, you can use in one terminal:
+```javascript
+npm run bundle
+```
+And in another terminal: 
+```javascript
+npm start
+```
+#### Deployed
+If you deploy on Heroku as I did, the ```postinstall``` script in the package.json takes care of bundling for you.
+
 ### Endpoints
