@@ -40,3 +40,8 @@ npm start
 If you deploy on Heroku as I did, the ```postinstall``` script in the package.json takes care of bundling for you.
 
 ### Endpoints
+- /gas - GET gas entries for a user or POST a gas entry for a user
+- /login - Logs a user in. Starts a session
+- /logout - Logs a user out. Destroys a session
+- /user - GET users or POST users (not updated with rest of the code currently)
+- /user/:id - GET specfic user, POST a specific user or DELETE a specific user (not updated with rest of the code currently)
