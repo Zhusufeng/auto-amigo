@@ -12,3 +12,20 @@ To work with Auto Amigo, it will be helpful if you are familar with the followin
 - Webpack
 
 ### Getting Started
+#### Local Machine
+To get all the dependencies and devDependencies, in the terminal, use the command: 
+```javascript
+npm install
+```
+
+To create your initial bundle, use the command:
+```javascript
+npm run build
+```
+
+To start the app, use the command:
+```javascript
+npm start
+```
+
+### Endpoints
